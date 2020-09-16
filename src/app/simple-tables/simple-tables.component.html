@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row title">
+    Simple Tables
+    <div class="ml-auto mr-3 directory">
+      <i class="fa fa-tachometer"></i>
+      <a href="">Home</a>
+      <span>></span>
+      <a href="">Tables</a>
+      <span>></span>
+      <a href="">Simple</a>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <app-full-width-table [title]="stripedTitle"></app-full-width-table>
+        </table>
+    </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="table-responsive">
+        <app-full-width-table [title]="simpleTitle"></app-full-width-table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <app-responsible-hover-table></app-responsible-hover-table>
+    </div>
+  </div>
+</div>

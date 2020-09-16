@@ -3,3 +3,95 @@
 
 $fa-font-path: "../node_modules/font-awesome/fonts";
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#mainToolbar {
+    color: white;
+    background: #3c8dbc;
+    opacity: 0.95;
+    max-height: 40px;
+    min-height: 40px;
+    padding: 0;
+}
+
+.titlelogo {
+    text-align: center;
+    transition: ease-in-out 200ms;
+}
+
+#sidebarButton {
+    cursor: pointer;
+    position: absolute;
+    transition: ease-in-out 200ms;
+}
+
+#mainToolbar .toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.user-info {
+    margin: 0 10px;
+    font-size: 12px;
+}
+.user-info img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display:inline-block;
+}
+
+#mainToolbar .setting {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#sidenavContainer {
+    z-index: -1;
+}
+
+#sidenav {
+    transition: ease-in-out 200ms;
+    background: #222d32;
+}
+
+#menus {
+    margin-top: 40px;
+    color: white;
+    font-size: 12px;
+}
+
+#menus .menu-icon {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#menus .submenu {
+    color: white;
+}
+
+.action-row {
+    height: 25px;
+}
+
+#sidenav.menu-close {
+    width: 50px
+}
+
+#sidenav.menu-open {
+    width: 200px
+}
+
+.mat-sidenav-content {
+    transition: ease-in-out 200ms;
+}
+
+.content {
+    margin-top: 40px;
+    background: #e6f2ff;
+    height: 100%;
+}

@@ -1,20 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar id="mainToolbar">
+  <span class="titlelogo" [ngStyle]="{'width.px': contentMargin}">{{title}}</span>
+  <i class="fa fa-bars" (click)="onToolbarMenuToggle()" id="sidebarButton" [ngStyle]="{'margin-left.px': contentMargin+10}"></i>
+  <span class="toolbar-spacer"></span>
+  <i class="fa fa-bell"></i><span class="badge badge-warning notification">10</span>
+  <i class="fa fa-flag"></i><span class="badge badge-danger notification">9</span>
 
+  <div class="user-info">
+    <img src="../assets/User_2 160x160.jpg" alt="Avatar">
+    <span>Alexander Pierce</span>
+  </div>
+  <i class="fa fa-cogs setting"></i>
+</mat-toolbar>
+
+
+<mat-sidenav-container id="sidenavContainer" fullscreen>
+  <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
+    <div id="menus">
+      <mat-expansion-panel appCustomMatExpansionToggle (opened)="panelOpenState=true" (closed)="panelOpenState=false"
+      routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'disabled-pointer': !isMenuOpen}">
+        <mat-expansion-panel-header [@.disabled]="true">
+          <mat-panel-title>
+            <i class="fa fa-tachometer menu-icon" [ngClass]="{'visible-icon': !isMenuOpen}"></i><span [hidden]="!isMenuOpen">Dashboard</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel appCustomMatExpansionToggle (opened)="panelOpenState=true" (closed)="panelOpenState=false"
+      routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'disabled-pointer': !isMenuOpen}"> 
+        <mat-expansion-panel-header [@.disabled]="true">
+          <mat-panel-title>
+            <i class="fa fa-table menu-icon" [ngClass]="{'visible-icon': !isMenuOpen}"></i><span [hidden]="!isMenuOpen">Tables</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div [hidden]="!isMenuOpen">
+          <div class="action-row">
+            <span class="dot"></span><a routerLink="/simpletables" class="submenu">Simple Tables</a>
+          </div>
+          <div class="action-row">
+            <span class="dot"></span><a routerLink="/datatables" class="submenu">Data Tables</a>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
+    <mat-selection-list class="content">
+      <router-outlet></router-outlet>
+    </mat-selection-list> 
+  </mat-sidenav-content>
+</mat-sidenav-container>

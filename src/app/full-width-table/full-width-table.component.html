@@ -1,0 +1,27 @@
+<table class="table">
+<thead>
+  <tr>
+    <td colspan="4" class="table-title">{{title}}</td>
+  </tr>
+</thead>
+<tbody>
+
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Task</th>
+    <th scope="col">Progress</th>
+    <th scope="col">Label</th>
+  </tr>
+  <tr *ngFor="let task of tasks | slice:0:num; let i=index" >
+    <th scope="row">{{i+1}}.</th>
+    <td>{{task.task}}</td>
+    <td>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" [ngStyle]="{'background-color': statusColor[i]}" role="progressbar" [style.width.%]="task.progress" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </td>
+    <td>
+      <span class="badge badge-pill" [ngStyle]="{'background-color': statusColor[i]}">{{task.progress}}%</span>
+    </td>
+  </tr>
+</tbody></table>
