@@ -14,4 +14,9 @@ export class ResponsibleHoverTableComponent implements OnInit {
   ngOnInit() {
   }
 
+  getJson() {
+    this.json = this.requestService.sendPostRequest();
+  }
+  
+  isCollapsed = false;
 }

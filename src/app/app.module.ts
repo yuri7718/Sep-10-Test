@@ -9,6 +9,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SimpleTablesService } from './services/simple-tables.service';
@@ -39,6 +40,7 @@ import { CustomMatExpansionToggleDirective} from "./custom.directive"
     MatToolbarModule,
     MatListModule,
     MatCardModule,
+    NgbModule,
 
     AppRoutingModule,
     HttpClientModule

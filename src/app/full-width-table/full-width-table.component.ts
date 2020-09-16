@@ -14,7 +14,12 @@ export class FullWidthTableComponent implements OnInit {
 
   @Input()
   title: string;
-  num = 0;
+
+  num: number;
+  currentPage = 1;
+  itemsPerPage = 4;
+  pageSize = 0;
+  pagination = true;
 
   constructor(private simpleTablesService: SimpleTablesService) { }
 
@@ -23,7 +28,12 @@ export class FullWidthTableComponent implements OnInit {
       this.num = this.tasks.length;
       if (this.title == "Striped Full Width Table") {
         this.num--;
+        this.pagination = false;
       }
   }
 
+  onPageChange(pageNum: number): void {
+    this.pageSize = this.itemsPerPage*(pageNum - 1);
+  }
+  
 }

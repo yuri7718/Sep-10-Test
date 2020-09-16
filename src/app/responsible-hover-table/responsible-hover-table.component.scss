@@ -1,3 +1,37 @@
 .card-body {
     font-size: 12px;
 }
+
+.fa-square {
+    color: green;
+    font-size: 5px;
+}
+
+.card-header {
+    font-size: 14px;
+}
+
+.card-header i {
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 12px;
+}
+
+.card-content {
+    font-size: 10px;
+    color: grey;
+}
+
+.card-content .row {
+    padding-top: 5px;
+}
+
+.progress {
+    height: 10px;
+}
+
+.col-sm-1 {
+    padding-right: 0;
+}
