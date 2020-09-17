@@ -14,6 +14,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { SimpleTablesService } from './services/simple-tables.service';
 import { RequestService } from './services/request.service';
+import { UserinfoService } from './services/userinfo.service';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { SimpleTablesComponent } from './simple-tables/simple-tables.component';
@@ -45,7 +46,7 @@ import { CustomMatExpansionToggleDirective} from "./custom.directive"
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [SimpleTablesService, RequestService],
+  providers: [SimpleTablesService, RequestService, UserinfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,10 +1,10 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
-      <div class="col-sm-10">
+      <div class="col-8">
         Responsive Hover Table
       </div>
-      <div class="col-sm-2">
+      <div class="col-4">
         <div class="float-right">
           <i class="fa fa-refresh" (click)="getJson()" style="padding-right: 10px"></i>
           <i class="fa fa-expand" (click)="isCollapsed = !isCollapsed"
@@ -15,53 +15,53 @@
   </div>
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
   <div class="card-body">
-    <h5 class="card-title">Worker 01, Host P2_PC</h5>
+    <h5 class="card-title">Worker 01, Host {{hostname | uppercase}}</h5>
     <div class="card-content">
       <div class="row">
-        <div class="col-sm-1">
+        <div class="col-md-1 col-3">
           <i class="fa fa-square"></i><span>CPU:</span>
         </div>
-        <div class="col-sm-8">
+        <div class="col-md-8 col-3">
           <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" [ngStyle]="{'background-color': '#9ae544'}" role="progressbar" [style.width.%]="val1" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3 col-6">
           1 core(s) in use
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-1">
+        <div class="col-md-1 col-3">
           <i class="fa fa-square"></i><span>RAM:</span>
         </div>
-        <div class="col-sm-8">
+        <div class="col-md-8 col-3">
           <div class="progress">
-            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" [ngStyle]="{'background-color': '#4fbeec'}" role="progressbar" [style.width.%]="val2" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
-        <div class="col-sm-3">
-          26% 33.73 GiB/125.9 GiB
+        <div class="col-md-3 col-6">
+          {{val2}}% 33.73 GiB/125.9 GiB
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-1">
+        <div class="col-md-1 col-3">
           <i class="fa fa-square"></i><span>VMEM:</span>
         </div>
-        <div class="col-sm-8">
+        <div class="col-md-8 col-3">
           <div class="progress">
-            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" [ngStyle]="{'background-color': '#f78f6a'}" role="progressbar" [style.width.%]="val3" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
-        <div class="col-sm-3">
-          12% 33.73 GiB/125.9 GiB
+        <div class="col-md-3 col-6">
+          {{val3}}% 33.73 GiB/125.9 GiB
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-1">
+        <div class="col-md-1 col-3">
           <i class="fa fa-square"></i><span>GPU:</span>
         </div>
-        <div class="col-sm-11">
-          GeForce RTX 2070, not used
+        <div class="col-md-11 col-9">
+          {{gpu}}
         </div>
       </div>
     </div>

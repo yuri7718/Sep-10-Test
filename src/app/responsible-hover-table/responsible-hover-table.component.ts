@@ -8,15 +8,38 @@ import { RequestService } from '../services/request.service';
 })
 export class ResponsibleHoverTableComponent implements OnInit {
 
-  json;
+ 
   constructor(private requestService: RequestService) { }
 
   ngOnInit() {
   }
-
+  
+  // values for progress-bars
+  hostname = "p2_pc";
+  val1 = 20;  // CPU
+  val2 = 26;  // RAM
+  val3 = 12;  // VMEM
+  gpu = "GeForce RTX 2070, not used";
+  
   getJson() {
-    this.json = this.requestService.sendPostRequest();
+    this.requestService.sendPostRequest().toPromise().then(res => {
+      console.log(res);
+      
+      let result = res["result"]["0"]["Info"];
+ 
+      this.hostname = result["Hostname"];
+
+      // not sure which memory is for ram or vmem
+      let resources = result["Resources"];
+      this.val1 = resources["CPUs"];
+      this.gpu = resources["GPUs"]["0"]
+    });
   }
   
   isCollapsed = false;
+
+
+
+
+
 }

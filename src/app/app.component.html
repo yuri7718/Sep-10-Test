@@ -1,15 +1,19 @@
+<div id="hiddenToolbar"><span>Nebula AI</span></div>
 <mat-toolbar id="mainToolbar">
-  <span class="titlelogo" [ngStyle]="{'width.px': contentMargin}">{{title}}</span>
-  <i class="fa fa-bars" (click)="onToolbarMenuToggle()" id="sidebarButton" [ngStyle]="{'margin-left.px': contentMargin+10}"></i>
-  <span class="toolbar-spacer"></span>
-  <i class="fa fa-bell"></i><span class="badge badge-warning notification">10</span>
-  <i class="fa fa-flag"></i><span class="badge badge-danger notification">9</span>
 
-  <div class="user-info">
-    <img src="../assets/User_2 160x160.jpg" alt="Avatar">
-    <span>Alexander Pierce</span>
-  </div>
-  <i class="fa fa-cogs setting"></i>
+    <span class="titlelogo" [ngStyle]="{'width.px': contentMargin}">{{title}}</span>
+  
+    <i class="fa fa-bars" (click)="onToolbarMenuToggle()" id="sidebarButton" [ngStyle]="{'margin-left.px': contentMargin+10}"></i>
+    <span class="toolbar-spacer"></span>
+    <a href="#"><i class="fa fa-bell"></i><span class="badge badge-warning notification">{{notification1}}</span></a>
+    <a href="#"><i class="fa fa-flag"></i><span class="badge badge-danger notification">{{notification2}}</span></a>
+
+    <div class="user-info">
+      <img src="../assets/User_2 160x160.jpg" alt="Avatar">
+      <span>{{username}}</span>
+    </div>
+    <a href="#"><i class="fa fa-cogs setting"></i></a>
+
 </mat-toolbar>
 
 
@@ -43,7 +47,7 @@
     </div>
   </mat-sidenav>
 
-  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
+  <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen">
     <mat-selection-list class="content">
       <router-outlet></router-outlet>
     </mat-selection-list> 

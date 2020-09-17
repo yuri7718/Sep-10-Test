@@ -2,8 +2,14 @@
 <thead>
   <tr>
     <td colspan="4" class="table-title">
-      {{title}}
-      <ngb-pagination class="float-right" *ngIf="pagination" [collectionSize]="num" #numPages [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)"></ngb-pagination>
+      <div class="row">
+        <div class="col">
+          {{title}}
+        </div>
+        <div class="col">
+          <ngb-pagination class="float-right" *ngIf="pagination" [collectionSize]="num" #numPages [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)"></ngb-pagination>
+        </div>
+      </div>
     </td>
   </tr>
 </thead>

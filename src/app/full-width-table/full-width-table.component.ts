@@ -10,7 +10,7 @@ import { Task } from '../data/data';
 export class FullWidthTableComponent implements OnInit {
 
   tasks: Task[];
-  statusColor: string[] = ["red", "orange", "blue", "green"];
+  statusColor: string[] = ["#dd4b39", "#f39c12", "#3c8dbc", "#00a65a", "#da21e6"];
 
   @Input()
   title: string;

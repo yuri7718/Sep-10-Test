@@ -9,6 +9,14 @@ body {
     margin: 0;
 }
 
+#hiddenToolbar {
+    text-align: center;
+    background: #3c8dbc;
+    color: white;
+    opacity: 0.95;
+    height: 0;
+}
+
 #mainToolbar {
     color: white;
     background: #3c8dbc;
@@ -36,6 +44,7 @@ body {
 .user-info {
     margin: 0 10px;
     font-size: 12px;
+    cursor: pointer;
 }
 .user-info img {
     height: 25px;
@@ -48,6 +57,10 @@ body {
 #mainToolbar .setting {
     display: inline-block;
     margin-right: 10px;
+}
+
+#mainToolbar a {
+    color: white;
 }
 
 #sidenavContainer {

@@ -68,3 +68,31 @@
     vertical-align: middle;
     margin-top: -5px !important;
 }
+
+@media screen and (min-width: 0px) and (max-width: 736px) {
+    .titlelogo{
+        display: none;
+        width: 0px !important;
+    }
+    .fa-bars {
+        margin-left: 10px !important;
+    }
+    .user-info span {
+        display: none;
+    }
+    #hiddenToolbar {
+        height: 40px;
+    }
+    #menus {
+        margin-top: 80px;
+    }
+    .content {
+        margin-top: 80px;
+    }
+    #sidenav.menu-close {
+        width: 0;
+    }
+    .menu-close {
+        margin-left: 0 !important;
+    }
+}

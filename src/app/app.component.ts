@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { UserinfoService } from './services/userinfo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,24 @@ import { trigger, transition, style, animate } from '@angular/animations';
   styleUrls: ['./app.component.scss'],
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Nebula AI';
   isMenuOpen = true;
   contentMargin = 200;
+
+  constructor(private userInfoService: UserinfoService) {}
+
+  notification1: number;
+  notification2: number;
+  username = "Alexander";
+
+  ngOnInit() {
+    this.userInfoService.getUserInfo().subscribe(res => {
+      console.log(res);
+      this.username = res["username"];
+      this.notification1 = res["bell-notification"];
+      this.notification2 = res["flag-notification"]})
+  }
 
   onToolbarMenuToggle() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -23,4 +37,5 @@ export class AppComponent {
       this.title = "Nebula AI";
     }
   }
+  
 }
