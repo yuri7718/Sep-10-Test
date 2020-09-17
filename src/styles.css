@@ -96,3 +96,7 @@
         margin-left: 0 !important;
     }
 }
+
+.table-responsive {
+    overflow-x: visible;
+}
